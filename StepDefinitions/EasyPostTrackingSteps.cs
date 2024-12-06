@@ -43,48 +43,6 @@ namespace SpecFlowProject.Steps
             _payload = ReadPayloadFromFile(fileName, "Payloads");
         }
 
-        [Given(@"The EasyPost tracking api Endpoint is loaded from ""(.*)""")]
-        public void GivenTheEasyPostTrackingApiEndpointIsLoadedFrom(string fileName)
-        {
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(fileName)
-                .Build();
-
-            _apiEndpoint = configuration["EasyPosttrackingEndpoint"] ?? throw new InvalidOperationException("EasyPost tracking API endpoint is not configured in " + fileName);
-            Console.WriteLine($"Loaded EasyPost tracking API endpoint: {_apiEndpoint}");
-        }
-
-        [Given(@"The X-Webhook-User-Id is set to ""(.*)""")]
-        public void GivenTheXWebhookUserIdIsSetTo(string webhookUserId)
-        {
-            _client.AddDefaultHeader("X-Webhook-User-Id", webhookUserId);
-        }
-
-        [Given(@"The X-Hmac-Signature is set to ""(.*)""")]
-        public void GivenTheXHmacSignatureIsSetTo(string hmacSignature)
-        {
-            _client.AddDefaultHeader("X-Hmac-Signature", hmacSignature);
-        }
-
-        [Given(@"The User-Agent is set to ""(.*)""")]
-        public void GivenTheUserAgentIsSetTo(string userAgent)
-        {
-            _client.AddDefaultHeader("User-Agent", userAgent);
-        }
-
-        [Given(@"The Content-Type is set to ""(.*)""")]
-        public void GivenTheContentTypeIsSetTo(string contentType)
-        {
-            _client.AddDefaultHeader("Content-Type", contentType);
-        }
-
-        [Given(@"The Connection is set to ""(.*)""")]
-        public void GivenTheConnectionIsSetTo(string connection)
-        {
-            _client.AddDefaultHeader("Connection", connection);
-        }
-
         [When(@"A POST request to the API with the data")]
         public void WhenISendAPostRequestToTheApiWithTheData()
         {
@@ -100,7 +58,7 @@ namespace SpecFlowProject.Steps
         [Then(@"A response with status code (.*)")]
         public void ThenIShouldReceiveAResponseWithStatusCode(int expectedStatusCode = 200)
         {
-            // Correct assertion for NUnit
+            // Correct usage of Assert.IsNotNull
             Assert.IsNotNull(_response, "The response should not be null.");
             Assert.That((int)(_response?.StatusCode ?? 0), Is.EqualTo(expectedStatusCode), "Expected status code did not match.");
         }
