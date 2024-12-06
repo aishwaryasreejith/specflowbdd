@@ -1,53 +1,55 @@
-name: Build and Run SpecFlow
- 
+name: CI Pipeline
+
 on:
-  workflow_dispatch:
- 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
- 
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
- 
-      - name: Set environment variables
-        run: |
-          echo "API_ENDPOINT=${{ secrets.API_ENDPOINT }}" >> $GITHUB_ENV
-          echo "DHL_API_ENDPOINT=${{ secrets.DHL_API_ENDPOINT }}" >> $GITHUB_ENV
-          echo "EASYPOST_TRACKING_ENDPOINT=${{ secrets.EASYPOST_TRACKING_ENDPOINT }}" >> $GITHUB_ENV
-          echo "LANDMARK_API_ENDPOINT=${{ secrets.LANDMARK_API_ENDPOINT }}" >> $GITHUB_ENV
- 
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v2
-        with:
-          dotnet-version: '8.0'
- 
-      - name: Install dependencies
-        run: |
-          dotnet restore
-          dotnet add package NUnit
-          dotnet add package NUnit3TestAdapter
-          dotnet add package Microsoft.NET.Test.Sdk
- 
-      - name: Run tests
-        run: |
-          dotnet test --logger "trx;LogFileName=test_results.trx"
- 
-      - name: Upload test results
-        uses: actions/upload-artifact@v2
-        with:
-          name: test-results
-          path: test_results.trx
- 
-      - name: Publish test results
-        uses: actions/upload-artifact@v2
-        with:
-          name: test-results
-          path: test_results.trx
- 
-      - name: Publish test results to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./test-results
+    # Checkout the repository code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Set up .NET SDK
+    - name: Set up .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0'
+
+    # Restore dependencies
+    - name: Restore dependencies
+      run: dotnet restore
+
+    # Build the project
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    # Run tests
+    - name: Run tests
+      run: dotnet test --configuration Release --no-build
+
+    # Publish the project
+    - name: Publish
+      run: dotnet publish --configuration Release --no-build --output ./publish
+
+    # Upload build artifacts (latest version)
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts
+        path: ./publish
+
+    # Optionally: Upload other files, like logs or additional artifacts
+    - name: Upload logs
+      uses: actions/upload-artifact@v3
+      with:
+        name: logs
+        path: ./logs
+
