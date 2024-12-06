@@ -26,7 +26,28 @@ jobs:
       - name: Install dependencies
         run: |
           dotnet restore
+          dotnet add package NUnit
+          dotnet add package NUnit3TestAdapter
+          dotnet add package Microsoft.NET.Test.Sdk
  
       - name: Run tests
         run: |
-          dotnet test
+          dotnet test --logger "trx;LogFileName=test_results.trx"
+ 
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: test_results.trx
+ 
+      - name: Publish test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: test_results.trx
+ 
+      - name: Publish test results to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./test-results
