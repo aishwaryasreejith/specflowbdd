@@ -82,7 +82,7 @@ namespace SpecFlowProject.Steps
         [Then(@"A response with status code (.*)")]
         public void ThenIShouldReceiveAResponseWithStatusCode(int expectedStatusCode = 201)
         {
-            // Ensure _response is not null
+            // Correct assertion for NUnit
             Assert.IsNotNull(_response, "The response should not be null.");
             Assert.That((int)(_response?.StatusCode ?? 0), Is.EqualTo(expectedStatusCode), "Expected status code did not match.");
         }
