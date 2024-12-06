@@ -1,0 +1,32 @@
+name: Build and Run SpecFlow
+ 
+on:
+  workflow_dispatch:
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+ 
+      - name: Set environment variables
+        run: |
+          echo "API_ENDPOINT=${{ secrets.API_ENDPOINT }}" >> $GITHUB_ENV
+          echo "DHL_API_ENDPOINT=${{ secrets.DHL_API_ENDPOINT }}" >> $GITHUB_ENV
+          echo "EASYPOST_TRACKING_ENDPOINT=${{ secrets.EASYPOST_TRACKING_ENDPOINT }}" >> $GITHUB_ENV
+          echo "LANDMARK_API_ENDPOINT=${{ secrets.LANDMARK_API_ENDPOINT }}" >> $GITHUB_ENV
+ 
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.0'
+ 
+      - name: Install dependencies
+        run: |
+          dotnet restore
+ 
+      - name: Run tests
+        run: |
+          dotnet test
