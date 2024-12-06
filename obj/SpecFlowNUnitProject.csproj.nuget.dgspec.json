@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\mec-ci-specflowbdd\\SpecFlowNUnitProject.csproj": {}
+    "C:\\SPECFLOW BDD\\specflowbdd\\SpecFlowNUnitProject.csproj": {}
   },
   "projects": {
-    "C:\\mec-ci-specflowbdd\\SpecFlowNUnitProject.csproj": {
+    "C:\\SPECFLOW BDD\\specflowbdd\\SpecFlowNUnitProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\mec-ci-specflowbdd\\SpecFlowNUnitProject.csproj",
+        "projectUniqueName": "C:\\SPECFLOW BDD\\specflowbdd\\SpecFlowNUnitProject.csproj",
         "projectName": "SpecFlowNUnitProject",
-        "projectPath": "C:\\mec-ci-specflowbdd\\SpecFlowNUnitProject.csproj",
+        "projectPath": "C:\\SPECFLOW BDD\\specflowbdd\\SpecFlowNUnitProject.csproj",
         "packagesPath": "C:\\Users\\ASR111\\.nuget\\packages\\",
-        "outputPath": "C:\\mec-ci-specflowbdd\\obj\\",
+        "outputPath": "C:\\SPECFLOW BDD\\specflowbdd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,13 +50,25 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Allure.Commons": {
+              "target": "Package",
+              "version": "[3.5.0.73, )"
+            },
+            "Allure.NUnit": {
+              "target": "Package",
+              "version": "[2.12.1, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.EnvironmentVariables": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
@@ -64,11 +76,11 @@
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.6.0, )"
+              "version": "[17.12.0, )"
             },
             "NUnit": {
               "target": "Package",
-              "version": "[3.13.3, )"
+              "version": "[4.2.2, )"
             },
             "NUnit.Analyzers": {
               "target": "Package",
@@ -76,11 +88,19 @@
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[4.2.1, )"
+              "version": "[4.6.0, )"
             },
             "RestSharp": {
               "target": "Package",
               "version": "[112.0.0, )"
+            },
+            "SpecFlow": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
+            "SpecFlow.Allure": {
+              "target": "Package",
+              "version": "[3.5.0.73, )"
             },
             "SpecFlow.NUnit": {
               "target": "Package",
@@ -97,6 +117,10 @@
             "coverlet.collector": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "dotenv.net": {
+              "target": "Package",
+              "version": "[3.2.1, )"
             }
           },
           "imports": [
