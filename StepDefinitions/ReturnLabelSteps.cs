@@ -26,8 +26,7 @@ namespace SpecFlowProject.Steps
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            // Assuming the API endpoint is configured under "ApiEndpoint" in appsettings.json
-            _apiEndpoint = configuration["ApiEndpoint"] ?? throw new InvalidOperationException("API endpoint is not configured in appsettings.json.");
+            _apiEndpoint = configuration["ReturnLabelApiEndpoint"] ?? throw new InvalidOperationException("Return label API endpoint is not configured in appsettings.json.");
         }
 
         private string ReadPayloadFromFile(string fileName, string folderName)
@@ -43,24 +42,24 @@ namespace SpecFlowProject.Steps
             }
         }
 
-        // Given: The request data from the 'payload.json' file stored in the 'Payloads' folder
+        // Given: The request data from the 'ReturnLabelPayload.json' file stored in the 'Payloads' folder
         [Given(@"The request data from the '(.*)' file stored in the 'Payloads' folder")]
         public void GivenTheRequestDataFromTheFileStoredInTheFolder(string fileName)
         {
             _payload = ReadPayloadFromFile(fileName, "Payloads");
         }
 
-        // Given: The API endpoint is loaded from "appsettings.json"
-        [Given(@"The API endpoint is loaded from ""(.*)""")]
-        public void GivenTheApiEndpointIsLoadedFrom(string fileName)
+        // Given: The return label API endpoint is loaded from "appsettings.json"
+        [Given(@"The Return Label API endpoint is loaded from ""(.*)""")]
+        public void GivenTheReturnLabelApiEndpointIsLoadedFrom(string fileName)
         {
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile(fileName)
                 .Build();
 
-            _apiEndpoint = configuration["ApiEndpoint"] ?? throw new InvalidOperationException("API endpoint is not configured in " + fileName);
-            Console.WriteLine($"Loaded API endpoint: {_apiEndpoint}");
+            _apiEndpoint = configuration["ReturnLabelApiEndpoint"] ?? throw new InvalidOperationException("Return label API endpoint is not configured in " + fileName);
+            Console.WriteLine($"Loaded Return Label API endpoint: {_apiEndpoint}");
         }
 
         // When: A POST request to the API with the data
@@ -79,11 +78,12 @@ namespace SpecFlowProject.Steps
             Console.WriteLine("Response Content: " + _response?.Content);
         }
 
-        // Then: A response with status code 200
+        // Then: A response with status code 201
         [Then(@"A response with status code (.*)")]
-        public void ThenIShouldReceiveAResponseWithStatusCode(int expectedStatusCode = 200)
+        public void ThenIShouldReceiveAResponseWithStatusCode(int expectedStatusCode = 201)
         {
-            Assert.NotNull(_response, "The response should not be null.");
+            // Correct assertion for NUnit
+            Assert.IsNotNull(_response, "The response should not be null.");
             Assert.That((int)(_response?.StatusCode ?? 0), Is.EqualTo(expectedStatusCode), "Expected status code did not match.");
         }
     }
