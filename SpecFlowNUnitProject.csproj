@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Ensure appsettings.json is copied to the output directory -->
+    <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    
     <!-- Copy Payloads folder and its contents to the output directory -->
     <None Update="Payloads\**\*" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
