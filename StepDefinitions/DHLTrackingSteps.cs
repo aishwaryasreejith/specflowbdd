@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using NUnit.Framework;
+using NUnit.Framework; // Ensure NUnit is referenced
 using Microsoft.Extensions.Configuration;
 using RestSharp;
 using TechTalk.SpecFlow;
@@ -12,7 +12,7 @@ namespace SpecFlowProject.Steps
     public class DHLTrackingSteps
     {
         private RestResponse? _response;
-        private string _apiEndpoint;
+        private readonly string _apiEndpoint;
         private string _payload;
 
         public DHLTrackingSteps()
@@ -23,13 +23,18 @@ namespace SpecFlowProject.Steps
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            _apiEndpoint = configuration["DHLApiEndpoint"] ?? throw new InvalidOperationException("DHL API endpoint is not configured in appsettings.json.");
+            _apiEndpoint = configuration["DHLApiEndpoint"] 
+                ?? throw new InvalidOperationException("DHL API endpoint is not configured in appsettings.json.");
             _payload = string.Empty;
         }
 
         private string ReadPayloadFromFile(string fileName, string folderName)
         {
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), folderName, fileName);
+
+            if (!File.Exists(filePath))
+                throw new FileNotFoundException($"The payload file '{fileName}' was not found in folder '{folderName}'.");
+
             return File.ReadAllText(filePath);
         }
 
@@ -43,8 +48,8 @@ namespace SpecFlowProject.Steps
         public void WhenISendAPostRequestToTheApiWithTheData()
         {
             var client = new RestClient();
-            var request = new RestRequest(_apiEndpoint, Method.Post);
-            request.AddJsonBody(_payload);
+            var request = new RestRequest(_apiEndpoint, Method.Post)
+                .AddJsonBody(_payload);
 
             _response = client.Execute(request);
 
@@ -55,7 +60,6 @@ namespace SpecFlowProject.Steps
         [Then(@"A response with status code (.*)")]
         public void ThenIShouldReceiveAResponseWithStatusCode(int expectedStatusCode = 201)
         {
-            // Correct usage of Assert.IsNotNull
             Assert.IsNotNull(_response, "The response should not be null.");
             Assert.That((int)(_response?.StatusCode ?? 0), Is.EqualTo(expectedStatusCode), "Expected status code did not match.");
         }
