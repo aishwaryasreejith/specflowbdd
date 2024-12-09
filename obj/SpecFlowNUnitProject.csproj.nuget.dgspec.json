@@ -50,14 +50,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Allure.Commons": {
-              "target": "Package",
-              "version": "[3.5.0.73, )"
-            },
-            "Allure.NUnit": {
-              "target": "Package",
-              "version": "[2.12.1, )"
-            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -97,10 +89,6 @@
             "SpecFlow": {
               "target": "Package",
               "version": "[3.9.74, )"
-            },
-            "SpecFlow.Allure": {
-              "target": "Package",
-              "version": "[3.5.0.73, )"
             },
             "SpecFlow.NUnit": {
               "target": "Package",
