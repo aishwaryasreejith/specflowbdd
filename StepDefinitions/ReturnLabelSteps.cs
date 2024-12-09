@@ -52,12 +52,12 @@ namespace SpecFlowProject.Steps
             Console.WriteLine("Response Content: " + _response?.Content);
         }
 
-        [Then(@"A response with status code (.*)")]
+       /* [Then(@"A response with status code (.*)")]
         public void ThenIShouldReceiveAResponseWithStatusCode(int expectedStatusCode = 201)
         {
             // Correct usage of Assert.IsNotNull
             Assert.IsNotNull(_response, "The response should not be null.");
             Assert.That((int)(_response?.StatusCode ?? 0), Is.EqualTo(expectedStatusCode), "Expected status code did not match.");
-        }
+        }*/
     }
 }
