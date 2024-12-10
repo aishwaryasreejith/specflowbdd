@@ -11,4 +11,4 @@ Feature: EasyPost Tracking API
     And The Content-Type is set to "application/json"
     And The Connection is set to "close"
     When A POST request to the API with the data
-    #Then A response with status code 200
+    Then A response with status code 200
