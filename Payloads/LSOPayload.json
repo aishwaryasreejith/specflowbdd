@@ -1,0 +1,111 @@
+{
+  "Carrier": 8,
+  "Service": 74,
+  "UniqueRequestId": "Demo_GLS_160424_11",
+  "Reference1": "",
+  "Reference2": "",
+  "ShipDate": "2024-10-29T00:00:00",
+  "ShipToAddress": {
+    "Id": null,
+    "Name": "Test Place",
+    "Company": "",
+    "Address1": "3603 Poole Road",
+    "Address2": "",
+    "Address3": "",
+    "City": "Kansas City",
+    "State": "ID",
+    "PostalCode": "66106",
+    "Country": "US",
+    "PhoneNumber": "4444444444",
+    "EmailAddress": "test@indicium.com",
+    "IsResidential": true
+  },
+  "ShipFromAddress": {
+    "Id": null,
+    "Name": "Maersk",
+    "Company": "Maersk",
+    "Address1": "9271 Meridian Way",
+    "Address2": "",
+    "Address3": "",
+    "City": "Dallas",
+    "State": "TX",
+    "PostalCode": "75247",
+    "Country": "US",
+    "PhoneNumber": "5132231024",
+    "EmailAddress": "test@indicium.com",
+    "IsResidential": false
+  },
+  "ReturnAddress": {
+    "Id": null,
+    "Name": "Shipping Dept",
+    "Company": "Maersk",
+    "Address1": "1015 N. America Way",
+    "Address2": "",
+    "Address3": "",
+    "City": "Miami",
+    "State": "FL",
+    "PostalCode": "33132",
+    "Country": "US",
+    "PhoneNumber": "513-346-3100",
+    "EmailAddress": "info@sample.com",
+    "IsResidential": false
+  },
+  "Parcel": {
+    "Id": null,
+    "RateId": "",
+    "Zone": null,
+    "Height": 1,
+    "Length": 1,
+    "Width": 1,
+    "DimensionUnit": 0,
+    "Weight": 0.220462,
+    "WeightUnit": 0,
+    "ParcelAttributes": [
+      2
+    ],
+    "Label": {
+      "LabelImage": null,
+      "LabelFormat": 3,
+      "LabelReferenceId": null
+    }
+  },
+  "metaData": {
+    "GENERATE MAERSK LABEL": "true"
+  },
+  "CarrierAccount": {
+    "Id": 4,
+    "ClientName": "BRYAN_TEST",
+    "AccountInfo": {
+      "AccountInfoId": 8,
+      "CarrierId": 8,
+      "CarrierCode": "LSO",
+      "BrokerId": 5,
+      "Broker": "EasyPost",
+      "CarrierUrl": "https://api.easypost.com",
+      "IntegrationUrl": "https://easypostservice.azurewebsites.net",
+      "AccountNumber": "ca_1eec96a10bff422a94eac4ac16827613",
+      "ShipperNumber": "",
+      "AccessKey": "EZTK15ac5eb88f2a480080f2f23b3649db1dJGnwDH234yEP1Ymh1WFK0g",
+      "UserName": "",
+      "Password": "",
+      "IntegrationId": "",
+      "Priority": "0",
+      "StartDate": "02/23/2024",
+      "EndDate": "12/31/2999",
+      "WarehouseCode": "",
+      "HubId": "",
+      "IsStampService": false,
+      "IsActive": true,
+      "ClientId": null,
+      "ClientSecret": null,
+      "AccessToken": null,
+      "AccessTokenUrl": null,
+      "CreateDate": "02/23/2024",
+      "ModifiedDate": "02/23/2024",
+      "ShipToCountryCode": null,
+      "ShipFromCountryCode": null,
+      "ShipFromLocation": null,
+      "GenerateEndOfDayManifest": false
+    }
+  }
+}
