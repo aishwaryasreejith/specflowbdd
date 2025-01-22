@@ -1,5 +1,8 @@
 using System;
 using System.IO;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
 using NUnit.Framework;
 using Microsoft.Extensions.Configuration;
 using RestSharp;
@@ -100,8 +103,45 @@ namespace SpecFlowProject.Steps
         [Then(@"A response with status code (.*)")]
         public void ThenIShouldReceiveAResponseWithStatusCode(int expectedStatusCode = 200)
         {
-            Assert.That(_response, Iz.Not.Null, "The response should not be null.");
+            Assert.That(_response, Is.Not.Null, "The response should not be null.");
             Assert.That((int)(_response?.StatusCode ?? 0), Is.EqualTo(expectedStatusCode), "Expected status code did not match.");
+        }
+
+        [Then(@"The response body matches the schema in '(.*)' file stored in the '(.*)' folder")]
+        public void ThenTheResponseBodyMatchesTheSchemaInFileStoredInTheFolder(string schemaFileName, string folderName)
+        {
+            try
+            {
+                
+                var schemaFilePath = Path.Combine(Directory.GetCurrentDirectory(), folderName, schemaFileName);
+
+                if (!File.Exists(schemaFilePath))
+                {
+                    throw new FileNotFoundException($"Schema file '{schemaFileName}' not found in the '{folderName}' folder.");
+                }
+
+             
+                string schemaJson = File.ReadAllText(schemaFilePath);
+                JSchema schema = JSchema.Parse(schemaJson);
+
+                
+                if (string.IsNullOrEmpty(_response?.Content))
+                {
+                    throw new InvalidOperationException("The API response content is empty or null.");
+                }
+
+                
+                JObject responseObject = JObject.Parse(_response.Content);
+
+                if (!responseObject.IsValid(schema, out IList<string> validationErrors))
+                {
+                    throw new Exception($"Schema validation failed: {string.Join(", ", validationErrors)}");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Schema validation failed with error: {ex.Message}");
+            }
         }
     }
 }

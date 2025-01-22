@@ -82,7 +82,7 @@ namespace SpecFlowNUnitProject.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Testing EasyPost Tracking API", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 5
+#line 4
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -92,34 +92,38 @@ namespace SpecFlowNUnitProject.Features
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
     testRunner.Given("The request data from the \'easypostpayload.json\' file stored in the \'Payloads\' fo" +
                         "lder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 6
     testRunner.And("The EasyPost tracking api Endpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 8
+#line 7
     testRunner.And("The X-Webhook-User-Id is set to \"user_15ac5eb88f2a480080f2f23b3649db1d\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 9
-    testRunner.And("The X-Hmac-Signature is set to \"hmac-sha256-hex=16d3a2261cfc77a83c701eca25d1af944" +
-                        "2996ef6fec2b8c6a834dd380d2c030a\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+    testRunner.And("The X-Hmac-Signature is set to \"hmac-sha256-hex=448ad4ac7f2b236d4126f3663409eca85" +
+                        "76d1fe7fdbfa531f563cbe53dd9c12b\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 9
     testRunner.And("The User-Agent is set to \"EasyPost WebHook Agent 1.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 11
+#line 10
     testRunner.And("The Content-Type is set to \"application/json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 12
+#line 11
     testRunner.And("The Connection is set to \"close\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 12
     testRunner.When("A POST request to the API with the data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
+#line 13
     testRunner.Then("A response with status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 14
+    testRunner.And("The response body matches the schema in \'EasypostSchema.json\' file stored in the " +
+                        "\'Schema\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

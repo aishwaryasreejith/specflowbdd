@@ -76,12 +76,12 @@ namespace SpecFlowNUnitProject.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("ReturnLabel for Better Trucks")]
-        public void ReturnLabelForBetterTrucks()
+        [NUnit.Framework.DescriptionAttribute("ReturnLabel for LSO")]
+        public void ReturnLabelForLSO()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ReturnLabel for Better Trucks", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ReturnLabel for LSO", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -93,8 +93,7 @@ namespace SpecFlowNUnitProject.Features
             {
                 this.ScenarioStart();
 #line 5
-    testRunner.Given("The request data from the \'BetterTrucksPayload.json\' file stored in the \'Payloads" +
-                        "\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("The request data from the \'LSOPayload.json\' file stored in the \'Payloads\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
     testRunner.And("The API endpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -104,6 +103,10 @@ namespace SpecFlowNUnitProject.Features
 #line hidden
 #line 8
     testRunner.Then("A response with status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 9
+    testRunner.And("The response schema is valid according to the \'LSOSchema.json\' schema in the \'Sch" +
+                        "ema\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -116,8 +119,8 @@ namespace SpecFlowNUnitProject.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ReturnLabel for GLS", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
-  this.ScenarioInitialize(scenarioInfo);
+#line 11
+ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -126,50 +129,21 @@ namespace SpecFlowNUnitProject.Features
             else
             {
                 this.ScenarioStart();
-#line 11
+#line 12
     testRunner.Given("The request data from the \'GLSPayload.json\' file stored in the \'Payloads\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 12
-    testRunner.And("The API endpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 13
-    testRunner.When("A POST request to the API with the data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.And("The API endpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
-    testRunner.Then("A response with status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("ReturnLabel for LSO")]
-        public void ReturnLabelForLSO()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ReturnLabel for LSO", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 16
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 17
-    testRunner.Given("The request data from the \'LSOPayload.json\' file stored in the \'Payloads\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 18
-    testRunner.And("The API endpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 19
     testRunner.When("A POST request to the API with the data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 20
+#line 15
     testRunner.Then("A response with status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 16
+    testRunner.And("The response schema is valid according to the \'GLSSchema.json\' schema in the \'Sch" +
+                        "ema\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -182,8 +156,8 @@ namespace SpecFlowNUnitProject.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ReturnLabel for UPSMI", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 22
-  this.ScenarioInitialize(scenarioInfo);
+#line 18
+     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -192,18 +166,98 @@ namespace SpecFlowNUnitProject.Features
             else
             {
                 this.ScenarioStart();
-#line 23
+#line 19
     testRunner.Given("The request data from the \'UPSMIPayload.json\' file stored in the \'Payloads\' folde" +
                         "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 24
+#line 20
     testRunner.And("The API endpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 21
     testRunner.When("A POST request to the API with the data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 26
+#line 22
     testRunner.Then("A response with status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 23
+    testRunner.And("The response schema is valid according to the \'UPSMISchema.json\' schema in the \'S" +
+                        "chema\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("ReturnLabel for Landmark")]
+        public void ReturnLabelForLandmark()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ReturnLabel for Landmark", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 25
+      this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 26
+    testRunner.Given("The request data from the \'LandmarkPayload.json\' file stored in the \'Payloads\' fo" +
+                        "lder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 27
+    testRunner.And("The API endpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
+    testRunner.When("A POST request to the API with the data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 29
+    testRunner.Then("A response with status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 30
+    testRunner.And("The response schema is valid according to the \'LandmarkSchema.json\' schema in the" +
+                        " \'Schema\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("ReturnLabel for Veho")]
+        public void ReturnLabelForVeho()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ReturnLabel for Veho", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 32
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 33
+    testRunner.Given("The request data from the \'VehoPayload.json\' file stored in the \'Payloads\' folder" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 34
+    testRunner.And("The API endpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 35
+    testRunner.When("A POST request to the API with the data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 36
+    testRunner.Then("A response with status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 37
+    testRunner.And("The response schema is valid according to the \'VehoSchema.json\' schema in the \'Sc" +
+                        "hema\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,0 +1,465 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "fees": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "feeDescription": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "feeCategory": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "feeDescription",
+              "amount",
+              "feeCategory"
+            ]
+          }
+        ]
+      },
+      "carrier": {
+        "type": "integer"
+      },
+      "service": {
+        "type": "integer"
+      },
+      "uniqueRequestId": {
+        "type": "string"
+      },
+      "reference1": {
+        "type": "string"
+      },
+      "reference2": {
+        "type": "string"
+      },
+      "shipDate": {
+        "type": "string"
+      },
+      "shipToAddress": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "null"
+          },
+          "name": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "address3": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "emailAddress": {
+            "type": "string"
+          },
+          "isResidential": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "company",
+          "address1",
+          "address2",
+          "address3",
+          "city",
+          "state",
+          "postalCode",
+          "country",
+          "phoneNumber",
+          "emailAddress",
+          "isResidential"
+        ]
+      },
+      "shipFromAddress": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "null"
+          },
+          "name": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "address3": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "emailAddress": {
+            "type": "string"
+          },
+          "isResidential": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "company",
+          "address1",
+          "address2",
+          "address3",
+          "city",
+          "state",
+          "postalCode",
+          "country",
+          "phoneNumber",
+          "emailAddress",
+          "isResidential"
+        ]
+      },
+      "returnAddress": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "null"
+          },
+          "name": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "address3": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "emailAddress": {
+            "type": "string"
+          },
+          "isResidential": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "company",
+          "address1",
+          "address2",
+          "address3",
+          "city",
+          "state",
+          "postalCode",
+          "country",
+          "phoneNumber",
+          "emailAddress",
+          "isResidential"
+        ]
+      },
+      "parcel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "rateId": {
+            "type": "string"
+          },
+          "zone": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer"
+          },
+          "length": {
+            "type": "integer"
+          },
+          "width": {
+            "type": "integer"
+          },
+          "dimensionUnit": {
+            "type": "integer"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "weightUnit": {
+            "type": "integer"
+          },
+          "parcelAttributes": {
+            "type": "null"
+          },
+          "label": {
+            "type": "object",
+            "properties": {
+              "labelImage": {
+                "type": "string"
+              },
+              "labelFormat": {
+                "type": "integer"
+              },
+              "labelReferenceId": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "labelImage",
+              "labelFormat",
+              "labelReferenceId"
+            ]
+          },
+          "additionalDocuments": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "id",
+          "rateId",
+          "zone",
+          "height",
+          "length",
+          "width",
+          "dimensionUnit",
+          "weight",
+          "weightUnit",
+          "parcelAttributes",
+          "label",
+          "additionalDocuments"
+        ]
+      },
+      "trackingNumber": {
+        "type": "string"
+      },
+      "metaData": {
+        "type": "object",
+        "properties": {
+          "GENERATE MAERSK LABEL": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "GENERATE MAERSK LABEL"
+        ]
+      },
+      "carrierAccount": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "clientName": {
+            "type": "string"
+          },
+          "accountInfo": {
+            "type": "object",
+            "properties": {
+              "accountInfoId": {
+                "type": "integer"
+              },
+              "carrierId": {
+                "type": "integer"
+              },
+              "carrierCode": {
+                "type": "string"
+              },
+              "brokerId": {
+                "type": "integer"
+              },
+              "broker": {
+                "type": "string"
+              },
+              "carrierUrl": {
+                "type": "string"
+              },
+              "integrationUrl": {
+                "type": "string"
+              },
+              "accountNumber": {
+                "type": "string"
+              },
+              "shipperNumber": {
+                "type": "string"
+              },
+              "accessKey": {
+                "type": "string"
+              },
+              "userName": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "integrationId": {
+                "type": "string"
+              },
+              "priority": {
+                "type": "string"
+              },
+              "startDate": {
+                "type": "string"
+              },
+              "endDate": {
+                "type": "string"
+              },
+              "warehouseCode": {
+                "type": "string"
+              },
+              "hubId": {
+                "type": "string"
+              },
+              "isStampService": {
+                "type": "boolean"
+              },
+              "isActive": {
+                "type": "boolean"
+              },
+              "clientId": {
+                "type": "null"
+              },
+              "clientSecret": {
+                "type": "null"
+              },
+              "accessToken": {
+                "type": "null"
+              },
+              "accessTokenUrl": {
+                "type": "null"
+              },
+              "createDate": {
+                "type": "string"
+              },
+              "modifiedDate": {
+                "type": "string"
+              },
+              "shipToCountryCode": {
+                "type": "null"
+              },
+              "shipFromCountryCode": {
+                "type": "null"
+              },
+              "shipFromLocation": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "accountInfoId",
+              "carrierId",
+              "carrierCode",
+              "brokerId",
+              "broker",
+              "carrierUrl",
+              "integrationUrl",
+              "accountNumber",
+              "shipperNumber",
+              "accessKey",
+              "userName",
+              "password",
+              "integrationId",
+              "priority",
+              "startDate",
+              "endDate",
+              "warehouseCode",
+              "hubId",
+              "isStampService",
+              "isActive",
+              "clientId",
+              "clientSecret",
+              "accessToken",
+              "accessTokenUrl",
+              "createDate",
+              "modifiedDate",
+              "shipToCountryCode",
+              "shipFromCountryCode",
+              "shipFromLocation"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "clientName",
+          "accountInfo"
+        ]
+      }
+    },
+    "required": [
+      "fees",
+      "carrier",
+      "service",
+      "uniqueRequestId",
+      "reference1",
+      "reference2",
+      "shipDate",
+      "shipToAddress",
+      "shipFromAddress",
+      "returnAddress",
+      "parcel",
+      "trackingNumber",
+      "metaData",
+      "carrierAccount"
+    ]
+  }

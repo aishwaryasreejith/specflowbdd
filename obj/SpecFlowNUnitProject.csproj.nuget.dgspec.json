@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "ExtentReports": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -72,7 +76,7 @@
             },
             "NUnit": {
               "target": "Package",
-              "version": "[4.2.2, )"
+              "version": "[4.3.2, )"
             },
             "NUnit.Analyzers": {
               "target": "Package",
@@ -81,6 +85,10 @@
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.6.0, )"
+            },
+            "Newtonsoft.Json.Schema": {
+              "target": "Package",
+              "version": "[4.0.1, )"
             },
             "RestSharp": {
               "target": "Package",

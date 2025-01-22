@@ -14,14 +14,25 @@
     
     <!-- Copy Payloads folder and its contents to the output directory -->
     <None Update="Payloads\**\*" CopyToOutputDirectory="PreserveNewest" />
+
+    <None Include="Schema\LSOSchema.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Schema\GLSSchema.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Schema\UPSMISchema.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Schema\LandmarkSchema.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Schema\VehoSchema.json" CopyToOutputDirectory="PreserveNewest" />
+
   </ItemGroup>
+
+
 
   <ItemGroup>
     <!-- Package References -->
     <PackageReference Include="dotenv.net" Version="3.2.1" />
+    <PackageReference Include="ExtentReports" Version="4.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
-    <PackageReference Include="NUnit" Version="4.2.2" />
+    <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
+    <PackageReference Include="NUnit" Version="4.3.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
     <PackageReference Include="NUnit.Analyzers" Version="3.6.1" />
     <PackageReference Include="coverlet.collector" Version="6.0.0" />

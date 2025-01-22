@@ -1,10 +1,19 @@
 {
   "specFlow": {
-    "unitTestProvider": {
-      "name": "NUnit"
-    },
     "bindingCulture": {
       "name": "en-US"
+    },
+    "plugins": [
+      {
+        "name": "SpecFlow.NUnit.Reporters",
+        "parameters": {
+          "reportType": "HTML",
+          "outputDirectory": "./TestResults/Reports"
+        }
+      }
+    ],
+    "unitTestProvider": {
+      "name": "NUnit"
     }
   }
 }
