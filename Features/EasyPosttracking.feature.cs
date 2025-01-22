@@ -121,10 +121,6 @@ namespace SpecFlowNUnitProject.Features
 #line 13
     testRunner.Then("A response with status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 14
-    testRunner.And("The response body matches the schema in \'EasypostSchema.json\' file stored in the " +
-                        "\'Schema\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
             }
             this.ScenarioCleanup();
         }

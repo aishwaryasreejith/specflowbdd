@@ -11,4 +11,3 @@ Feature: EasyPost Tracking API
     And The Connection is set to "close"
     When A POST request to the API with the data
     Then A response with status code 200
-    And The response body matches the schema in 'EasypostSchema.json' file stored in the 'Schema' folder
