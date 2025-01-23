@@ -1,88 +1,90 @@
 using System;
-using System.IO;
+using System.Net.Http;
+using System.Text;
 using NUnit.Framework;
-using Microsoft.Extensions.Configuration;
-using RestSharp;
 using TechTalk.SpecFlow;
+using System.IO;
+using Microsoft.Extensions.Configuration;
 
-namespace SpecFlowProject.Steps
+namespace MyNamespace
 {
     [Binding]
-    [Scope(Tag = "DHLTracking")]
-    public class DHLTrackingSteps
+    public class StepDefinitions
     {
-        private RestResponse? _response;  // Nullable _response field
-        private string _apiEndpoint;      // Non-nullable _apiEndpoint field
-        private string _payload;          // Non-nullable _payload field
+        private readonly ScenarioContext _scenarioContext;
+        private HttpResponseMessage? _response; // Marked as nullable
+        private string? _apiEndpoint;  // Make it nullable
 
-        public DHLTrackingSteps()
+        public StepDefinitions(ScenarioContext scenarioContext)
         {
-            // Initialize _payload to an empty string by default
-            _payload = string.Empty;
+            _scenarioContext = scenarioContext;
+        }
 
-            // Load API endpoint from appsettings.json
+        // Given The request data from the 'DHLPayload.json' file stored in the 'Payloads' folder
+        [Given(@"The request data from the '(.*)' file stored in the '(.*)' folder")]
+        public void GivenTheRequestDataFromTheFileStoredInTheFolder(string fileName, string folderPath)
+        {
+            var payloadPath = Path.Combine(folderPath, fileName);
+            string requestData = File.ReadAllText(payloadPath);
+            _scenarioContext["RequestData"] = requestData; // Store in ScenarioContext
+        }
+
+        // Given The DHL API endpoint is loaded from "appsettings.json"
+        [Given(@"The DHLapiEndpoint is loaded from ""(.*)""")]
+        public void GivenTheDHLapiEndpointIsLoadedFrom(string fileName)
+        {
+            // Load the configuration from appsettings.json
             var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
+                .SetBasePath(Directory.GetCurrentDirectory()) // Make sure it's looking in the right folder
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
-            _apiEndpoint = configuration["DHLApiEndpoint"] ?? throw new InvalidOperationException("DHL API endpoint is not configured in appsettings.json.");
+            // Retrieve the API endpoint from the configuration
+            _apiEndpoint = configuration["DHLapiEndpoint"] ?? throw new InvalidOperationException("DHLapiEndpoint is not configured in appsettings.json");
+
+            // Store the API endpoint in ScenarioContext
+            _scenarioContext["DHLapiEndpoint"] = _apiEndpoint;
+
+            Console.WriteLine($"Loaded DHLapiEndpoint: {_apiEndpoint}");
         }
 
-        private string ReadPayloadFromFile(string fileName, string folderName)
-        {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), folderName, fileName);
-            if (File.Exists(filePath))
-            {
-                return File.ReadAllText(filePath);
-            }
-            else
-            {
-                throw new FileNotFoundException($"The file {fileName} was not found in the {folderName} folder.");
-            }
-        }
-
-        // Given: The request data from the 'DHLPayload.json' file stored in the 'Payloads' folder
-        [Given(@"The request data from the '(.*)' file stored in the 'Payloads' folder")]
-        public void GivenTheRequestDataFromTheFileStoredInTheFolder(string fileName)
-        {
-            _payload = ReadPayloadFromFile(fileName, "Payloads");
-        }
-
-        // Given: The DHL API endpoint is loaded from "appsettings.json"
-        [Given(@"The DHL API endpoint is loaded from ""(.*)""")]
-        public void GivenTheDHLApiEndpointIsLoadedFrom(string fileName)
-        {
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(fileName)
-                .Build();
-
-            _apiEndpoint = configuration["DHLApiEndpoint"] ?? throw new InvalidOperationException("DHL API endpoint is not configured in " + fileName);
-            Console.WriteLine($"Loaded DHL API endpoint: {_apiEndpoint}");
-        }
-
-        // When: A POST request to the API with the data
+        // When A POST request to the API with the data
         [When(@"A POST request to the API with the data")]
-        public void WhenISendAPostRequestToTheApiWithTheData()
+        public void WhenAPOSTRequestToTheAPIWithTheData()
         {
-            var client = new RestClient();
-            var request = new RestRequest(_apiEndpoint, Method.Post);
+            var requestData = _scenarioContext["RequestData"] as string;
+            var apiEndpoint = _scenarioContext["DHLapiEndpoint"] as string; // Retrieve the endpoint from ScenarioContext
 
-            // Ensure _payload is not null when adding to the request
-            request.AddJsonBody(_payload ?? string.Empty);  // Use a fallback to an empty string if _payload is null
+            if (requestData == null || apiEndpoint == null)
+            {
+                throw new InvalidOperationException("Request data or API endpoint is not set.");
+            }
 
-            _response = client.Execute(request); // Assign response to nullable field
+            var httpClient = new HttpClient();
+            var content = new StringContent(requestData, Encoding.UTF8, "application/json");
 
-            Console.WriteLine("Status Code: " + _response?.StatusCode);
-            Console.WriteLine("Response Content: " + _response?.Content);
+            _response = httpClient.PostAsync(apiEndpoint, content).Result;
         }
 
-        // Then: A response with status code 201
-        [Then(@"A response with status code (.*)")]
-        public void ThenIShouldReceiveAResponseWithStatusCode(int expectedStatusCode = 201)
+        // When the Username is set to 'DHLeComm-pp'
+        [When(@"the Username is set to '(.*)'")]
+        public void WhenTheUsernameIsSetTo(string username)
         {
-            Assert.That(_response, Iz.Not.Null, "The response should not be null.");
+            _scenarioContext["Username"] = username;
+        }
+
+        // When Password is set to '1kZ1znys8rjyF1c'
+        [When(@"Password is set to '(.*)'")]
+        public void WhenPasswordIsSetTo(string password)
+        {
+            _scenarioContext["Password"] = password;
+        }
+
+        // Then A response with status code 201
+        [Then(@"A response with status code (.*)")]
+        public void ThenAResponseWithStatusCode(int expectedStatusCode)
+        {
+            Assert.That(_response, Is.Not.Null, "The response should not be null.");
             Assert.That((int)(_response?.StatusCode ?? 0), Is.EqualTo(expectedStatusCode), "Expected status code did not match.");
         }
     }

@@ -96,12 +96,18 @@ namespace SpecFlowNUnitProject.Features
         testRunner.Given("The request data from the \'DHLPayload.json\' file stored in the \'Payloads\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
-        testRunner.And("The DHL API endpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And("The DHLapiEndpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
         testRunner.When("A POST request to the API with the data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
+        testRunner.And("the Username is set to \'DHLeComm-pp\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+        testRunner.And("Password is set to \'1kZ1znys8rjyF1c\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
         testRunner.Then("A response with status code 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
