@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpecFlowNUnitProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54cba89b3a8ad6eccbbdfa7a18c82fbdd019b911")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0010632e94ec4f31c084aa5e66a37effe7f7662")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpecFlowNUnitProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpecFlowNUnitProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

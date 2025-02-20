@@ -534,3 +534,6 @@ C:\SPECFLOW BDD\specflowbdd\obj\Debug\net8.0\refint\SpecFlowNUnitProject.dll
 C:\SPECFLOW BDD\specflowbdd\obj\Debug\net8.0\SpecFlowNUnitProject.pdb
 C:\SPECFLOW BDD\specflowbdd\obj\Debug\net8.0\SpecFlowNUnitProject.genruntimeconfig.cache
 C:\SPECFLOW BDD\specflowbdd\obj\Debug\net8.0\ref\SpecFlowNUnitProject.dll
+C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\ReliablePayload.json
+C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\ReliableLabelPayload.json
+C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\ReliableRoutePayload.json

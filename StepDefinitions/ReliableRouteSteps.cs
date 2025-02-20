@@ -1,3 +1,4 @@
+
 using System;
 using System.IO;
 using NUnit.Framework;
@@ -11,14 +12,14 @@ using Newtonsoft.Json;
 namespace SpecFlowProject.Steps
 {
     [Binding]
-    [Scope(Tag = "ReturnLabel")]
-    public class ReturnLabelSteps
+    [Scope(Tag = "ReliableRoute")]
+    public class ReliableRouteSteps
     {
         private RestResponse? _response;  
         private string _apiEndpoint;   
         private string _payload;   
 
-        public ReturnLabelSteps()
+        public ReliableRouteSteps()
         {
             _payload = string.Empty;
 
@@ -27,7 +28,7 @@ namespace SpecFlowProject.Steps
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            _apiEndpoint = configuration["ApiEndpoint"] ?? throw new InvalidOperationException("API endpoint is not configured in appsettings.json.");
+            _apiEndpoint = configuration["ReliableRouteEndpoint"] ?? throw new InvalidOperationException("API endpoint is not configured in appsettings.json.");
         }
 
         private string ReadPayloadFromFile(string fileName, string folderName)
@@ -57,7 +58,7 @@ namespace SpecFlowProject.Steps
                 .AddJsonFile(fileName)
                 .Build();
 
-            _apiEndpoint = configuration["ApiEndpoint"] ?? throw new InvalidOperationException("API endpoint is not configured in " + fileName);
+            _apiEndpoint = configuration["ReliableRouteEndpoint"] ?? throw new InvalidOperationException("API endpoint is not configured in " + fileName);
             Console.WriteLine($"Loaded API endpoint: {_apiEndpoint}");
         }
 
