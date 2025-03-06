@@ -1,0 +1,55 @@
+{
+    "carrier": "Reliable",
+    "carrierMetaData": {
+      "ACCOUNT_ID": "1de5b5f8-0cdd-46c6-9755-4bdd4ad073e3",
+      "additionalProp2": "value2",
+      "additionalProp3": "value3"
+    },
+    "carrierAccount": {
+      "id": 1,
+      "clientName": "Acme Corp.",
+      "accountInfo": {
+        "accountInfoId": 101,
+        "carrierId": 21,
+        "carrierCode": "Reliable",
+        "brokerId": 5,
+        "broker": "XYZ Freight",
+        "carrierUrl": "https://shipezee.com",
+        "integrationUrl": "https://shipezee.com",
+        "accountNumber": "UPS12345678",
+        "shipperNumber": "SHIP12345",
+        "accessKey": "accesskey123",
+        "userName": "maersk_test",
+        "password": "jNZFoYCO3SHZ/jf",
+        "integrationId": "integration_12345",
+        "priority": "High",
+        "startDate": "2025-01-01",
+        "endDate": "2026-01-01",
+        "warehouseCode": "WH001",
+        "hubId": "HUB001",
+        "isStampService": true,
+        "isActive": true,
+        "clientId": "client_12345",
+        "clientSecret": "secretkey123",
+        "accessToken": "access_token_123",
+        "accessTokenUrl": "https://www.ups.com/token",
+        "createDate": "2025-01-01",
+        "modifiedDate": "2025-02-01",
+        "shipToCountryCode": "CA",
+        "shipFromCountryCode": "CA",
+        "shipFromLocation": {
+          "shipLocationId": 7,
+          "locationCode": "LOC001",
+          "firstName": "John",
+          "lastName": "Smith",
+          "address1": "456 Shipping Ave",
+          "address2": "Suite 300",
+          "address3": "",
+          "city": "Vancouver",
+          "stateProvince": "BC",
+          "postalCode": "V6B 1A1",
+          "countyCode": "LA"
+        }
+      }
+    }
+  }

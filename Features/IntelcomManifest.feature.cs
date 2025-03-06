@@ -20,24 +20,24 @@ namespace SpecFlowNUnitProject.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Tracking for Reliable")]
-    [NUnit.Framework.CategoryAttribute("ReliableTracking")]
-    public partial class TrackingForReliableFeature
+    [NUnit.Framework.DescriptionAttribute("Return Manifest for Intelcom")]
+    [NUnit.Framework.CategoryAttribute("IntelcomManifest")]
+    public partial class ReturnManifestForIntelcomFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = new string[] {
-                "ReliableTracking"};
+                "IntelcomManifest"};
         
-#line 1 "Reliabletracking.feature"
+#line 1 "IntelcomManifest.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Tracking for Reliable", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Return Manifest for Intelcom", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,14 +76,14 @@ namespace SpecFlowNUnitProject.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Tracking for Reliable")]
-        public void TrackingForReliable()
+        [NUnit.Framework.DescriptionAttribute("ReturnManifest for Intelcom")]
+        public void ReturnManifestForIntelcom()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tracking for Reliable", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ReturnManifest for Intelcom", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
-    this.ScenarioInitialize(scenarioInfo);
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -93,23 +93,17 @@ namespace SpecFlowNUnitProject.Features
             {
                 this.ScenarioStart();
 #line 5
-        testRunner.Given("The request data from the \'ReliableTrackingPayload.json\' file stored in the \'Payl" +
+    testRunner.Given("The request data from the \'IntelcomManifestPayload.json\' file stored in the \'Payl" +
                         "oads\' folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
-        testRunner.And("The ReliableTrackingEndpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("The ReliableManifestEndpoint is loaded from \"appsettings.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 7
-        testRunner.When("A POST request to the API with the data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("A POST request to the API with the data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
-        testRunner.And("the Username is set to \'ReliableUsername\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 9
-        testRunner.And("Password is set to \'ReliablePassword\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
-        testRunner.Then("A response with status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("A response with status code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

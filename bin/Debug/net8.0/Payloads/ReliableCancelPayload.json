@@ -1,0 +1,57 @@
+{
+    "TrackingNumber": "RBL000003953409US",
+    "MetaData": {
+      "ACCOUNT_ID": "1de5b5f8-0cdd-46c6-9755-4bdd4ad073e3",
+      "SHIPTOCOUNTRY": "US",
+      "SHIPFROMCOUNTRY": "US"
+    },
+    "CarrierAccount": {
+      "id": 90,
+      "clientName": "AmazonUK",
+      "accountInfo": {
+        "accountInfoId": 23,
+        "carrierId": 21,
+        "carrierCode": "Reliable",
+        "brokerId": null,
+        "broker": null,
+        "carrierUrl": "https://shipezee.com",
+        "integrationUrl": "https://shipezee.com",
+        "accountNumber": "",
+        "shipperNumber": "",
+        "accessKey": "",
+        "userName": "maersk_test",
+        "password": "jNZFoYCO3SHZ/jf",
+        "integrationId": "",
+        "priority": "0",
+        "startDate": "08/27/2024",
+        "endDate": "12/31/2999",
+        "warehouseCode": "",
+        "hubId": "",
+        "isStampService": false,
+        "isActive": true,
+        "clientId": null,
+        "clientSecret": null,
+        "accessToken": "US:US:1de5b5f8-0cdd-46c6-9755-4bdd4ad073e3",
+        "accessTokenUrl": null,
+        "createDate": "08/27/2024",
+        "modifiedDate": "08/27/2024",
+        "shipToCountryCode": null,
+        "shipFromCountryCode": null,
+        "shipFromLocation": {
+          "shipLocationId": 7,
+          "locationCode": "LAX",
+          "firstName": "Warehouse",
+          "lastName": "Shipper",
+          "address1": "2141 E. Paulhan St.",
+          "address2": null,
+          "address3": null,
+          "city": "Los Angeles",
+          "stateProvince": "CA",
+          "postalCode": "90220",
+          "countyCode": "US"
+        },
+        "generateEndOfDayManifest": true,
+        "maerskAccount": true
+      }
+    }
+  }

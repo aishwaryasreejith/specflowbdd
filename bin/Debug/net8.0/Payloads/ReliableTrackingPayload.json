@@ -1,0 +1,16 @@
+{
+    "perf": "135",
+    "event": [
+      {
+        "reference1": "DCI-TEST112-1",
+        "reference2": "string / string",
+        "tracknbr": "CPC-TEST00002345",
+        "eventdesc": "100",
+        "eventcode": "Order Data Received",
+        "city": "Mississauga",
+        "country": "CA",
+        "eventdt": "2024-11-05T14:29"
+      }
+    ]
+  }
+  

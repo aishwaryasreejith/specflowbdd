@@ -537,3 +537,8 @@ C:\SPECFLOW BDD\specflowbdd\obj\Debug\net8.0\ref\SpecFlowNUnitProject.dll
 C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\ReliablePayload.json
 C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\ReliableLabelPayload.json
 C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\ReliableRoutePayload.json
+C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\ReliableCancelPayload.json
+C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\ReliableTrackingPayload.json
+C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\ReliableManifestPayload.json
+C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\IntelcomLabelPayload.json
+C:\SPECFLOW BDD\specflowbdd\bin\Debug\net8.0\Payloads\IntelcomManifestPayload.json
